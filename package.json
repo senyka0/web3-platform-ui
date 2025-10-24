@@ -3,6 +3,7 @@
   "name": "vsedozvoleno-frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://senyka0.github.io/web3-platform-ui",
   "proxy": "http://localhost:5000",
   "dependencies": {
     "axios": "^1.6.0",
@@ -18,7 +19,10 @@
     "build": "react-scripts build",
     "build:mock": "REACT_APP_USE_MOCK_API=true react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "deploy:mock": "REACT_APP_USE_MOCK_API=true npm run build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +44,7 @@
   },
   "devDependencies": {
     "autoprefixer": "10.4.15",
+    "gh-pages": "^6.3.0",
     "postcss": "8.4.28",
     "tailwindcss": "3.3.3"
   }
